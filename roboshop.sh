@@ -3,7 +3,7 @@
 AMI_ID="ami-0220d79f3f480ecf5"
 SG_ID="sg-0afab592c30fcb42a"
 ZONE_ID="Z04345922VXETGRE2PBOU"
-DOMAIN_NAME="heysushma.fun
+DOMAIN_NAME="heysushma.fun"
 
 for instance in $@  #mongodb redis mysql
 do
