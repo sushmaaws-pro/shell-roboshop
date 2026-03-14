@@ -6,11 +6,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FLODER="/var/log/shell-roboshop"
+LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FLODER/$SCRIPTE_NAME.log"
 
-mkdir -p $LOGS_FLODER
+mkdir -p $LOGS_FOlDER
 
 echo "Script stared  executed at: $(date)" | tee -a $LOG_FILE
 
