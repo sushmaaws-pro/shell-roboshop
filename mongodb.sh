@@ -44,7 +44,7 @@ do
 done 
 
 
-cp vim /etc/yum.repos.d/mongo.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Adding Mongo repo"
 
 dnf install mongodb-org -y &>>$LOG_FILE
@@ -53,5 +53,5 @@ VALIDATE $? "Intalling Mongodb"
 systemctl enable mongod &>>$LOG_FILE
 VALIDATE $? "Enable Mongodb"
 
-systemctl start mongod 
+systemctl start mongod &>>$LOG_FILE
 VALIDATE $? "Start Mongodb"
