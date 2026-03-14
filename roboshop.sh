@@ -1,8 +1,8 @@
 #!/bin/bash
 
-AMI_ID=""
-SG_ID=""
-ZONE_ID=""
+AMI_ID="ami-0220d79f3f480ecf5"
+SG_ID="sg-0afab592c30fcb42a"
+ZONE_ID="Z04345922VXETGRE2PBOU"
 DOMAIN_NAME="heysushma.fun"
 
 for instance in $@  #mongodb redis mysql
@@ -16,7 +16,7 @@ do
     else
         IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PubilicIpAddress' --output text)
         RECORD_NAME="$instance.$DOMAIN_NAME" # heysushma.fun    
-fi
+fi 
 
 echo "$instance: $IP"
 
