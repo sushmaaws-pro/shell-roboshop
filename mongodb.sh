@@ -41,7 +41,7 @@ do
     else
         echo -e "$package already installed ...$Y SKIPPING $N"
     fi
-dne     
+done 
 
 
 cp vim /etc/yum.repos.d/mongo.repo
@@ -55,5 +55,3 @@ VALIDATE $? "Enable Mongodb"
 
 systemctl start mongod 
 VALIDATE $? "Start Mongodb"
-
-
