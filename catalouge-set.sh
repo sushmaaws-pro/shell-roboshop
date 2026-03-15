@@ -26,7 +26,7 @@ fi
 
 
 ####### NodeJS #####
-dnf install disable nodejs -y &>>$LOG_FILE
+dnf module disable nodejs -y &>>$LOG_FILE
 dnf module enable nodejs:20 -y  &>>$LOG_FILE
 dnf install nodejs -y &>>$LOG_FILE
 
