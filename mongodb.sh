@@ -58,5 +58,5 @@ VALIDATE $? "Start Mongodb"
 sed -i 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf
 VALIDATE $? "Allowing remote connections too MongoDB"
 
-systemctl restart monogdb
+systemctl restart monogd
 VALIDATE $? "Restarted MongoDB"
