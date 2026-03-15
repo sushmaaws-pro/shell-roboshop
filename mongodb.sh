@@ -52,7 +52,7 @@ VALIDATE $? "Intalling Mongodb"
 systemctl enable mongod &>>$LOG_FILE
 VALIDATE $? "Enable Mongodb"
 
-systemctl start mongod &>>$LOG_FILE
+systemctl start mongod
 VALIDATE $? "Start Mongodb"
 
 sed -i 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf
