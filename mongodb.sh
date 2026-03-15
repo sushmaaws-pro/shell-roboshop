@@ -13,8 +13,6 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
- $LOG_FILE
-
 if [ $USERID -ne 0 ]; then 
     echo "ERROR:: Please run this acript with root privelege"
     exit 1
@@ -61,4 +59,4 @@ sed -i 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf
 VALIDATE $? "Allowing remote connections too MongoDB"
 
 systemctl restart monogdb
-VALIDATE $? "Restarted Mongo
+VALIDATE $? "Restarted MongoDB"
