@@ -5,12 +5,15 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+
 LOGS_FOLDER="/var/log/roboshop-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
+
+ $LOG_FILE
 
 if [ $USERID -ne 0 ]; then 
     echo "ERROR:: Please run this acript with root privelege"
@@ -53,3 +56,9 @@ VALIDATE $? "Enable Mongodb"
 
 systemctl start mongod &>>$LOG_FILE
 VALIDATE $? "Start Mongodb"
+
+sed -i 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf
+VALIDATE $? "Allowing remote connections too MongoDB"
+
+systemctl restart monogdb
+VALIDATE $? "Restarted Mongo
