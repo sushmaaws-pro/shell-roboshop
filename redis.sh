@@ -10,7 +10,7 @@ LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOOLDER/$SCRIPT_NAME.LOG"
 START_TIME=$(date +%s)
-mkdir -P $LOGS_FOLDER
+mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
