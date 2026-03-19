@@ -14,7 +14,7 @@ do
         IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
         RECORD_NAME="$instance.$DOMAIN_NAME" # mongodb.heysushma.fun
     else
-        IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PubilicIpAddress' --output text)
+        IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
         RECORD_NAME="$instance.$DOMAIN_NAME" # heysushma.fun    
 fi 
 
